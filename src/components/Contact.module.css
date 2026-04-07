@@ -53,8 +53,8 @@
   align-items: center;
   gap: 1.5rem;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
@@ -63,9 +63,9 @@
 
 .contactCard:hover {
   transform: translateX(10px);
-  border-color: rgba(34, 211, 238, 0.3);
+  border-color: var(--cyan-accent);
   background: rgba(34, 211, 238, 0.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(34, 211, 238, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 20px rgba(34, 211, 238, 0.1);
 }
 
 .iconWrapper {
@@ -83,7 +83,7 @@
 
 .contactCard:hover .iconWrapper {
   background: var(--cyan-accent);
-  color: #000;
+  color: #fff;
   box-shadow: 0 0 15px var(--cyan-accent);
 }
 
@@ -103,15 +103,15 @@
 
 .value {
   font-size: 1.15rem;
-  color: #fff;
+  color: var(--text-color);
   font-weight: 700;
   word-break: break-all;
 }
 
 /* Contact Form */
 .contactForm {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   padding: 3.5rem;
   border-radius: 24px;
   display: flex;
@@ -133,15 +133,20 @@
 }
 
 .input, .textarea {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.2rem;
-  color: #fff;
+  color: var(--text-color);
   font-size: 1rem;
   outline: none;
   transition: all 0.3s ease;
   width: 100%;
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
 }
 
 .input:focus, .textarea:focus {
