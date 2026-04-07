@@ -9,6 +9,14 @@
   --border-color: #e2e8f0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 100px;
+}
+
 .dark {
   --bg-color: #0f111a;
   --text-color: #f8fafc;

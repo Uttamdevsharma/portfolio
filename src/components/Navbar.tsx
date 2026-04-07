@@ -7,7 +7,7 @@ import { Moon, Sun, Menu, X } from "lucide-react";
 import styles from "./Navbar.module.css";
 
 const NAVBAR_LINKS = [
-  { name: "Home", href: "/" },
+  { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },

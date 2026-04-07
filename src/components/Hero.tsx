@@ -42,7 +42,7 @@ export function Hero() {
   }, [text, isDeleting, loopNum, typingSpeed]);
 
   return (
-    <section className={styles.heroContainer}>
+    <section id="home" className={styles.heroContainer}>
       <div className={styles.leftContent}>
         <span className={styles.greeting}>Hello! I am</span>
         <h1 className={styles.name}>Uttam Sharma</h1>
