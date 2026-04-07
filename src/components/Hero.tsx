@@ -45,7 +45,7 @@ export function Hero() {
     <section className={styles.heroContainer}>
       <div className={styles.leftContent}>
         <span className={styles.greeting}>Hello! I am</span>
-        <h1 className={styles.name}>Uttam Kumar Devsharma</h1>
+        <h1 className={styles.name}>Uttam Sharma</h1>
 
         <div className={styles.designationWrapper}>
           <h2 className={styles.designation}>{text}</h2>
