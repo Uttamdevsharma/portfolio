@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Youtube, Facebook, Linkedin } from "lucide-react";
+import { FaGithub, FaYoutube, FaFacebook, FaLinkedin } from "react-icons/fa";
 import styles from "./SideElements.module.css";
 import Link from "next/link";
 
@@ -9,22 +9,22 @@ export function SideElements() {
     <>
       <div className={styles.leftSidebar}>
         <Link href="https://github.com" target="_blank" className={styles.iconLink}>
-          <Github size={20} />
+          <FaGithub size={20} />
         </Link>
         <Link href="https://youtube.com" target="_blank" className={styles.iconLink}>
-          <Youtube size={20} />
+          <FaYoutube size={20} />
         </Link>
         <Link href="https://facebook.com" target="_blank" className={styles.iconLink}>
-          <Facebook size={20} />
+          <FaFacebook size={20} />
         </Link>
         <Link href="https://linkedin.com" target="_blank" className={styles.iconLink}>
-          <Linkedin size={20} />
+          <FaLinkedin size={20} />
         </Link>
       </div>
 
       <div className={styles.rightSidebar}>
-        <a href="mailto:uttamkumar@gmail.com" className={styles.emailLink}>
-          uttamkumar@gmail.com
+        <a href="mailto:uttam.devsharma@gmail.com" className={styles.emailLink}>
+          uttam.devsharma@gmail.com
         </a>
       </div>
     </>
