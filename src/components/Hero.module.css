@@ -126,7 +126,9 @@
 
 @media (max-width: 1024px) {
   .heroContainer {
-    padding: 0 4rem;
+    height: auto;
+    min-height: 100vh;
+    padding: 120px 4rem 4rem 4rem;
     flex-direction: column;
     justify-content: center;
     gap: 4rem;
@@ -138,11 +140,11 @@
   }
   
   .name {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
   
   .designation {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .resumeBtn {
@@ -156,23 +158,41 @@
 
 @media (max-width: 768px) {
   .heroContainer {
-    padding: 0 2rem;
+    padding: 100px 1.5rem 3rem 1.5rem;
+    gap: 3rem;
   }
   
   .name {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    word-break: keep-all;
+  }
+  
+  .designationWrapper {
+    height: 4rem;
+    justify-content: center;
   }
   
   .designation {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   
   .cursor {
-    height: 1.5rem;
+    height: 1.4rem;
+  }
+
+  .intro {
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
   }
   
   .imageWrapper {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
+  }
+
+  .resumeBtn {
+    width: 100%;
+    max-width: 250px;
+    padding: 0.8rem 0;
   }
 }
