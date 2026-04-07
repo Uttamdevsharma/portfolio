@@ -1,0 +1,317 @@
+.experienceSection {
+  padding: 80px 1.5rem;
+  background-color: transparent;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.header {
+  text-align: center;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--cyan-accent);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+}
+
+.timelineContainer {
+  position: relative;
+  max-width: 1200px; /* Increased max-width */
+  margin: 2rem auto;
+  padding: 20px 0;
+}
+
+/* Central vertical line */
+.timelineLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(34, 211, 238, 0.5) 15%,
+    rgba(34, 211, 238, 0.5) 85%,
+    transparent
+  );
+  transform: translateX(-50%);
+}
+
+.timelineItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 4rem 0;
+  position: relative;
+}
+
+/* Icon on the timeline */
+.timelineIconWrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.timelineIcon {
+  width: 50px;
+  height: 50px;
+  background-color: var(--card-bg);
+  border: 2px solid var(--cyan-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cyan-accent);
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.3);
+  transition: all 0.3s ease;
+}
+
+.timelineItem:hover .timelineIcon {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.6);
+  background-color: rgba(34, 211, 238, 0.1);
+}
+
+.timelineContent {
+  width: 46%; /* Increased width */
+  text-align: left; /* All text LEFT-aligned */
+}
+
+/* Consistent left alignment for both sides */
+.left .timelineContent,
+.right .timelineContent {
+  text-align: left;
+}
+
+.timelineItem.right {
+  flex-direction: row-reverse;
+}
+
+/* Card Styling */
+.card {
+  background-color: var(--card-bg); /* Use theme variable */
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem; /* Increased padding */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dark .card {
+  background-color: rgba(30, 41, 59, 0.7);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--cyan-accent);
+  box-shadow: 0 8px 30px rgba(34, 211, 238, 0.2);
+}
+
+.itemTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--cyan-accent);
+  margin-bottom: 0.25rem;
+}
+
+.organization {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.cardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  justify-content: flex-start; /* Ensure left alignment */
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.description {
+  color: var(--text-color); /* More visible in both modes */
+  opacity: 0.9;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1rem;
+  justify-content: flex-start; /* Ensure left alignment */
+}
+
+.skillBadge {
+  background-color: rgba(34, 211, 238, 0.1);
+  color: var(--cyan-accent);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Date for desktop alternations */
+.timelineDate {
+  width: 46%;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.left .timelineDate {
+  text-align: left;
+  padding-left: 2rem;
+}
+
+.right .timelineDate {
+  text-align: right;
+  padding-right: 2rem;
+}
+
+/* Expandable Section */
+.expandableSection {
+  margin-top: 1rem;
+}
+
+.viewDetailsBtn {
+  background: transparent;
+  color: var(--cyan-accent);
+  border: 1px solid var(--cyan-accent);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+  margin-left: 0; /* Forced left alignment */
+}
+
+.viewDetailsBtn:hover {
+  background-color: rgba(34, 211, 238, 0.1);
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.3);
+}
+
+.rolesContent {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 0;
+}
+
+.rolesContent.expanded {
+  max-height: 600px;
+  opacity: 1;
+  margin-top: 1.5rem;
+}
+
+.rolesTitle {
+  color: #a3ff12; /* Neon green highlight */
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  font-size: 1.15rem;
+}
+
+.rolesList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.roleItem {
+  position: relative;
+  padding-left: 24px;
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.roleItem::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--cyan-accent);
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .experienceSection {
+    padding: 80px 4rem;
+  }
+  .timelineContent {
+    width: 42%;
+  }
+}
+
+@media (max-width: 768px) {
+  .experienceSection {
+    padding: 40px 1.5rem;
+  }
+
+  .timelineLine {
+    left: 30px;
+  }
+
+  .timelineIconWrapper {
+    left: 30px;
+    transform: translateX(-50%);
+  }
+
+  .timelineItem {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 2rem 0;
+  }
+
+  .timelineItem.right {
+    flex-direction: column;
+  }
+
+  .timelineContent {
+    width: 100%;
+    padding-left: 60px;
+  }
+
+  .timelineDate {
+    display: none; 
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+}

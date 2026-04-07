@@ -133,7 +133,7 @@ export function Skills() {
             <p className={styles.linkedinText}>
               Visit my{" "}
               <a
-                href="https://www.linkedin.com/in/uttam-kumar-devsharma/"
+                href="https://www.linkedin.com/in/uttamkds"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.linkedinLink}
