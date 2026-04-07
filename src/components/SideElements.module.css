@@ -1,4 +1,25 @@
-/* Side Elements CSS */
+/* Animation Definitions */
+@keyframes slideUpFade {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownFade {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 /* Left Side - Social Icons */
 .leftSidebar {
@@ -10,6 +31,7 @@
   align-items: center;
   gap: 20px;
   z-index: 100;
+  animation: slideUpFade 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .leftSidebar::after {
@@ -47,6 +69,7 @@
   align-items: center;
   gap: 20px;
   z-index: 100;
+  animation: slideDownFade 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .rightSidebar::before {
