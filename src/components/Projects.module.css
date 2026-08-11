@@ -36,98 +36,154 @@
 
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2.5rem;
-  justify-items: center;
 }
 
 .projectCard {
+  position: relative;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 2.5rem;
-  width: 100%;
-  max-width: 420px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
+  border-radius: 24px;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  backdrop-filter: blur(10px);
+  gap: 1.25rem;
+  backdrop-filter: blur(12px);
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .projectCard:hover {
-  transform: translateY(-10px) scale(1.02);
-  border-color: var(--cyan-accent);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 
-              0 0 20px rgba(34, 211, 238, 0.15);
+  transform: translateY(-8px);
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(34, 211, 238, 0.12),
+    0 0 32px rgba(34, 211, 238, 0.1);
 }
 
-.imagePlaceholder {
-  width: 100%;
-  height: 220px;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  border: 1px dashed var(--border-color);
+.cardMedia {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
   overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .projectImage {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .projectCard:hover .projectImage {
-  transform: scale(1.1);
+  transform: scale(1.08);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(2, 6, 23, 0.55), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.projectCard:hover .cardOverlay {
+  opacity: 1;
+}
+
+.liveDemoBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(34, 211, 238, 0.14);
+  border: 1px solid rgba(34, 211, 238, 0.45);
+  color: var(--cyan-accent);
+  backdrop-filter: blur(8px);
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(10px) scale(0.9);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.projectCard:hover .liveDemoBtn {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.liveDemoBtn:hover {
+  background: var(--cyan-accent);
+  color: #022c38;
+  box-shadow: 0 0 22px rgba(34, 211, 238, 0.55);
+}
+
+.cardBody {
+  padding: 0 0.5rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  flex: 1;
 }
 
 .projectName {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--text-color);
   margin: 0;
+  line-height: 1.3;
 }
 
 .shortDesc {
   color: var(--text-muted);
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 0.98rem;
+  line-height: 1.65;
   margin: 0;
-  min-height: 3.2rem;
+  min-height: 3.3rem;
+}
+
+.cardActions {
+  margin-top: auto;
 }
 
 .viewDetailsBtn {
-  margin-top: auto;
-  align-self: flex-start;
-  background: transparent;
-  border: 1px solid var(--cyan-accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 13px 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.16), rgba(34, 211, 238, 0.05));
+  border: 1px solid rgba(34, 211, 238, 0.4);
   color: var(--cyan-accent);
-  padding: 10px 24px;
-  border-radius: 8px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(34, 211, 238, 0.1);
   text-decoration: none;
-  display: inline-block;
-  text-align: center;
 }
 
 .viewDetailsBtn:hover {
   background: var(--cyan-accent);
-  color: #fff;
-  box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+  color: #022c38;
+  box-shadow: 0 10px 28px rgba(34, 211, 238, 0.35);
+}
+
+.arrowIcon {
+  transition: transform 0.3s ease;
+}
+
+.viewDetailsBtn:hover .arrowIcon {
+  transform: translateX(4px);
 }
 
 /* Responsive */

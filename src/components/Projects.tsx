@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaExternalLinkAlt, FaArrowRight } from "react-icons/fa";
 import { PROJECTS } from "@/constants/projects";
 import styles from "./Projects.module.css";
 
@@ -15,25 +16,39 @@ export function Projects() {
 
       <div className={styles.projectsGrid}>
         {PROJECTS.map((project) => (
-          <div key={project.id} className={styles.projectCard}>
-            <div className={styles.imagePlaceholder}>
-              <Image 
-                src={project.image} 
+          <article key={project.id} className={styles.projectCard}>
+            <div className={styles.cardMedia}>
+              <Image
+                src={project.image}
                 alt={project.name}
-                width={400}
-                height={220}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className={styles.projectImage}
               />
+              <div className={styles.cardOverlay} />
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.liveDemoBtn}
+                aria-label={`Open ${project.name} live demo`}
+                title="Live Demo"
+              >
+                <FaExternalLinkAlt />
+              </a>
             </div>
-            <h3 className={styles.projectName}>{project.name}</h3>
-            <p className={styles.shortDesc}>{project.shortDescription}</p>
-            <Link 
-              href={`/projects/${project.id}`}
-              className={styles.viewDetailsBtn}
-            >
-              View Details
-            </Link>
-          </div>
+
+            <div className={styles.cardBody}>
+              <h3 className={styles.projectName}>{project.name}</h3>
+              <p className={styles.shortDesc}>{project.shortDescription}</p>
+
+              <div className={styles.cardActions}>
+                <Link href={`/projects/${project.id}`} className={styles.viewDetailsBtn}>
+                  View Details <FaArrowRight className={styles.arrowIcon} />
+                </Link>
+              </div>
+            </div>
+          </article>
         ))}
       </div>
     </section>
